@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Modal from './Modal.js';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 export class CatDetail extends Component {
     constructor() {
@@ -19,10 +20,13 @@ export class CatDetail extends Component {
 
     render() {
       const list = this.props.cat.info.map((info) =>(
+
             <div key={info.id}>
             <li>{info.details}</li>
-            <img className="details" src={info.img1}></img>
+            <a target="blank" href={info.url}>
+            <img className="details" src={info.img1}></img></a>
             </div>
+
 
           ));
 

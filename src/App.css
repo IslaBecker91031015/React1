@@ -145,8 +145,8 @@ body{
   object-fit: cover;
   cursor: pointer;
 }
-.cat:hover{
-  opacity:0.6;
+.cat:hover, .details:hover{
+  opacity:0.8;
 }
 .title{
   color:white;
@@ -170,12 +170,14 @@ li{
 
 .details{
   margin: auto;
+  cursor:pointer;
   width:500px;
   height:300px;
   object-fit: cover;
   margin-bottom: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 footer{
   z-index: 2;
   width: 100%;
