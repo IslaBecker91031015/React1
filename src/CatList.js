@@ -33,11 +33,11 @@ class CatList extends Component {
           info: [
             {id:1, details:"Becker & Co Law Firm", img1:becker1, url:"https://becker.co.nz"},
             {id:2, details:"A Message In A Bottle", img1:web, url:"https://oceanmess.com"},
-            {id:3, details: "AcquaFly", img1:acquafly},
+            {id:3, details: "AcquaFly", img1:acquafly, url:"https://islabecker91031015.github.io/AcquaFly/"},
             {id:4, details:"Coffee Site", img1:coffee, url:"https://islabecker91031015.github.io/AgileProjectCoffeeSite/"},
-            {id:6, details:"Jenkins", img1:jenkins},
+            {id:6, details:"Jenkins", img1:jenkins, url:"https://islabecker91031015.github.io/Jenkins/"},
             {id:7, details:"Microservices", img1:micro, url:"https://islabecker91031015.github.io/MicroservicesSite/"},
-            {id:8, details: "Healthcare One", img1:healthcare},
+            {id:8, details: "Healthcare One", img1:healthcare, url:"https://islabecker91031015.github.io/Healthcare-Site---JS-React-HTML-CSS/"},
           ]
         },
         {
