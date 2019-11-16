@@ -1,0 +1,261 @@
+// Fonts
+@font-face {
+    font-family: 'farrayregular';
+    src: url('../fonts/farray-webfont.woff2') format('woff2'),
+         url('../fonts/farray-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'omega_sansregular';
+    src: url('../fonts/omegasansregular-webfont.woff2') format('woff2'),
+         url('../fonts/omegasansregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Variables
+$textcolor: #050b26;
+$fontfamily: Arial, Helvetica, sans-serif;
+$sizecont:100%;
+$margin: 6% 0 0 10%;
+@mixin rotate($deg){
+    -moz-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    transform: rotate($deg);
+    -webkit-transform: 0.2s ease-in-out;
+    -moz-transform: 0.2s ease-in-out;
+    -ms-transform: 0.2s ease-in-out;
+}  
+.text{
+    color:white;
+    text-align: center;
+    font-size: 18px;
+}
+.imgAll{
+    margin: 0 auto;
+    cursor:pointer;
+    object-fit: cover;
+    &:hover{
+        opacity:0.8;
+    }
+}
+
+//Body
+body{
+    font-family: $fontfamily;
+    background-image: url(../img/skystars.png);
+    background-color:$textcolor;
+    height:$sizecont;
+    width:$sizecont;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background-repeat:no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+.main{
+    width:$sizecont;
+    height: 1200px;
+    top:100px;
+    position:absolute;
+    z-index: 2;
+    @extend .text;
+}
+
+// Star Background
+.star{
+    z-index: 0;
+    animation: Star-spin infinite 10s linear;
+    @extend .text;
+}
+@keyframes Star-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.stars{
+    width:$sizecont;
+    z-index: 0;
+    animation: Star-opac infinite 2s linear;
+}
+@keyframes Star-opac {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+// Text
+.content h2{
+    letter-spacing: 5px;
+    position:absolute;
+    z-index: 3;
+    cursor: pointer;
+    margin-top: 220px;
+    padding-left: 30px;
+}
+ul{
+    color:black;
+    text-decoration: none;
+    list-style-type: none;
+  }
+li{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+// Main title
+.title{
+    color:white;
+    font-family: 'omega_sansregular';
+    letter-spacing: 20px;
+    margin-left: 100px;
+    font-size:26px;
+}
+
+// lang list
+.langs{
+    font-family:'farrayregular';
+    width:10%;
+    text-align: left;
+    margin: $margin;
+    letter-spacing: 10px;
+    float:left;
+    font-size: 25px;
+}
+.content{
+    width: 70%;
+    margin:$margin;
+    color:white;
+    float:right;
+    text-align: left;
+    font-family: 'omega_sansregular';
+}
+
+// Categories
+.cat{
+    width: 500px;
+    height: 280px;
+    @extend .imgAll;
+}
+// Category img buttons
+.boxes{
+    float:right;
+    margin: 0 100px;
+}
+// Pop up modal
+.modal{
+    text-align: left;
+    font-family: 'omega_sansregular';
+    background-color:white;
+    position:fixed;
+    width: 50%;
+    height:$sizecont;
+    left:0;
+    top:0;
+    color:black;
+    z-index: 5;
+    overflow-y: scroll;
+    padding: 2.5% 0;
+}
+// Modal images
+.imgs{
+    @extend .imgAll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.details{
+    width:95%;
+    height:20%;
+    margin-bottom: 5%;
+    @extend .imgs;
+}
+.details2{
+    width:300px;
+    height:500px;
+    margin-bottom: 5%;
+    @extend .imgs;
+}
+.close{
+    top:0;
+    right:40px;
+    position:absolute;
+    font-size: 25px;
+}
+.close:hover {
+    cursor:pointer;
+    opacity:0.80;
+    @include rotate(-55deg);
+}
+
+// Footer
+footer{
+    z-index: 2;
+    width: $sizecont;
+    bottom:0;
+    padding:1.5% 0;
+    margin-top: 200px;
+    position:absolute;
+    background-color: rgba(255,255,255,0.1);
+    @extend .text;
+}
+footer:hover{
+    cursor:pointer;
+    background-color: rgba(255,255,255,0.2);
+}
+// Responsive
+@media only screen and (max-width: 900px) {
+    .modal{
+        width: $sizecont;
+        height: $sizecont;
+        margin:0;
+        float:none;
+    }
+    .title{
+        text-align: center;
+        margin: 0;
+        font-size:20px;
+    }
+    .close{
+        position: fixed;
+        right: 95%;
+        margin-left: 0;
+        font-weight: 900;
+        margin: 1% 0;
+        font-size: 22px;
+    }
+    .content{
+        width: $sizecont;
+        margin: auto;
+        padding:0;
+    }
+    .langs{
+        margin: 12% 0;
+        font-size: 18px;
+        width: $sizecont;
+        text-align: center;
+    }
+    .cat{
+        width: $sizecont;
+        height: 30%;
+    }
+    .details2{
+        width:220px;
+        height:300px;
+    }
+    .content h2{
+        margin-top: 25%;
+        padding-left: 2%;
+        font-size: 22px;
+    }
+}

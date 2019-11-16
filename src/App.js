@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-
-import StarBackground from './StarBackground.js';
-import LangList from './LangList.js';
-import CatList from './CatList.js';
+import './style/AppStyle.css';
+import StarBackground from './components/StarBackground.js';
+import Modal from './components/Modal.js';
+import LangList from './components/LangList.js';
+import CatList from './components/CatList.js';
 
 class App extends Component {
    constructor() {
@@ -11,9 +11,17 @@ class App extends Component {
      this.state = {
        stars:[],
        langs:[],
-       category:[]
+       category:[],
+       show: false,
      };
     }
+
+    showModal = () => {
+      this.setState({ show: true });
+      };
+    hideModal = () => {
+        this.setState({ show: false });
+      };
 
     render() {
       const x = 25;
@@ -34,8 +42,15 @@ class App extends Component {
           <div className="langs">
             <LangList langs={this.state.langs}/>
           </div>
-
-          <footer>
+          <Modal show={this.state.show} close={this.hideModal}>
+             <div>
+              <ul>
+                <li>CONTACT</li>
+                <li>islabecker@gmail.com</li>
+              </ul>
+              </div>
+            </Modal>
+          <footer onClick={this.showModal}>
             <p>&copy; Isla Becker</p>
           </footer>
         </div>
