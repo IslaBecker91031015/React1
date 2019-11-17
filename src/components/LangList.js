@@ -27,10 +27,7 @@ class LangList extends Component {
           id:5,
           language: "Java"
         },
-        {
-          id:6,
-          language: "C#"
-        },
+        
         {
           id:7,
           language: "Python"
@@ -38,6 +35,10 @@ class LangList extends Component {
         {
           id:8,
           language: "SQL"
+        },
+        {
+          id:6,
+          language: "C#"
         }
       ]
     };

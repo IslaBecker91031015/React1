@@ -22,7 +22,7 @@ class StarBackground extends Component {
       const imgArray = [star1, star2, star3];
       let imgSrc = imgArray[Math.floor(Math.random() * imgArray.length)];
       let imgSize = (Math.floor(Math.random() * 30)) +'px';
-      let imgOpacity = Math.random();
+      let imgOpacity = (Math.random() * 80);
       let imgMargin = (Math.floor(Math.random() * 80)) +'px';
 
       let newStar = {

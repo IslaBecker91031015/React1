@@ -23,15 +23,17 @@ export class CatDetail extends Component {
       const list = this.props.cat.info.map((info) =>(
         (info.type == "app") ?
         <div key={info.id}>
-        <li>{info.details}</li>
+        <h3>{info.details}</h3>
         <a target="blank" href={info.url}>
         <img className="details2" src={info.img1}></img></a>
+        <p>{info.about}</p>
         </div>
       : (
         <div key={info.id}>
-        <li>{info.details}</li>
+        <h3>{info.details}</h3>
         <a target="blank" href={info.url}>
         <img className="details" src={info.img1}></img></a>
+        <p>{info.about}</p>
         </div>
       )
         ));
@@ -41,7 +43,7 @@ export class CatDetail extends Component {
             <ul>{list}</ul>
           </Modal>
           <div className="boxes">
-           <h2>{this.props.cat.title}</h2>
+           <h2 onClick={this.showModal} >{this.props.cat.title}</h2>
            <img className="cat" onClick={this.showModal} src={this.props.cat.img}></img>
           </div>
         </div>
